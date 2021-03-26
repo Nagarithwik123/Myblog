@@ -82,26 +82,25 @@ p {
 .menu {
     list-style: none;
     position: fixed;
-    top: 10px;
-    right: 30px;
-    cursor: pointer;
+    top: 0px;
     z-index: 10;
-    
+    margin-top: 0px;
+    width: 100%;
+    background: white;
 }
 
 .links {
-    float: left;
+    display: inline;
     color: fuchsia;
-    padding-top: 5px;
     padding-left: 9px;
     padding-right: 9px;
-    padding-bottom: 5px;
     font-family: fantasy;
-    font-size: 20px
+    font-size: 20px;
 }
 
 .links:hover {
     background-color: aqua;
+    text-decoration: underline;
 }
 
 html {
@@ -110,8 +109,28 @@ html {
 
 a {
     text-decoration: none;
+    text-shadow: 2px 2px gainsboro;
+    color: darkorange;
 }
 
 .article:hover {
     color:fuchsia;
+}
+#writings a{
+  text-shadow: none !important;
+    text-decoration: underline !important;
+    color: blue;
+}
+#contact{
+    background-color: chartreuse;
+}
+.contact iframe{
+    width: 100%;
+}
+.contact1 h3{
+    display: inline;
+}
+.contact1 a{
+    color: white;
+    text-shadow: none;
 }
