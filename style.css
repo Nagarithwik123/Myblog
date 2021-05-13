@@ -1,36 +1,19 @@
-#contact iframe
+h1
 {
-    width: 100%;
+	color: red; 
+	font-size: 40px;
 }
-.contact h3
-{
-    display: inline;
+.body_backgorund {
+	background-image: url("bg1.jpg");
+	background-position: center;
+	background-size: cover;
 }
-.contact a
-{
-    text-shadow: none;
+
+#myCanvas{
+    border-width: 10px;
+	background-color: white;
+	border-style: ridge;
 }
-body{
-    text-align: center;
-}
-.achievements{
-    text-align: center;
-}
-.whatsnew img{
-    text-align: left;
-}
-.whatsnew p{
-    text-align: right;
-}
-.modal-content{
-    margin-top: 100px;
-}
-.img_modal{
-    display: inline-block;
-}
-.p_modal{
-    margin-top: 10px;
-}
-.modal-body{
-    text-align: center;
+span{
+	font-size: 20px;
 }
