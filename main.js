@@ -1,28 +1,40 @@
-var images=[
-    "IMG-20181227-WA0021.jpg",
-    "IMG20180824062156.jpg",
-    "IMG-20191217-WA0022.jpg",
-    "IMG_20210411_201415.jpg",
-    "IMG-20210114-WA0184.jpg"
-];
-var names=[
-    "Siva Nageswararao",
-    "Sirisha",
-    "Manogna",
-    "Naga Rithwik"
-    ];
+canvas=document.getElementById("myCanvas");
+ctx=canvas.getContext("2d");
+color="blue";
 
-var i=0;
-function update()
-{
-    i++;
-    var numbers_of_family_members_in_array=5
-    if(i>numbers_of_family_members_in_array)
-    {
-        i=0;
-    }
-    var updatedImage = images[i];
-    var updatedName = names[i];
-    document.getElementById("family_members_image").src=updatedImage;
-    document.getElementById("family_member_name").innerHTML=updatedName;
+ctx.beginPath();
+ctx.strokeStyle=color;
+ctx.lineWidth=1;
+ctx.rect(150,143,430,200);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle=color;
+ctx.lineWidth=1;
+ctx.arc(250,210,40,0,2*Math.PI);
+ctx.stroke();
+
+ctx=canvas.getContext("2d");
+color="blue";
+
+canvas.addEventListener("mousedown",my_mousedown);
+
+function my_mousedown(e){
+    color=document.getElementById("color").value;
+    console.log(color);
+
+    mouse_x=e.clientX - canvas.offsetLeft;
+    mouse_y=e.clientY - canvas.offsetTop;
+    console.log("X="+ mouse_x+",Y="+mouse_y);
+    circle(mouse_x,mouse_y);
 }
+function circle(mouse_x,mouse_y){
+    ctx.beginPath();
+ctx.strokeStyle=color;
+ctx.lineWidth=2;
+ctx.arc(mouse_x,mouse_y,40,0,2*Math.PI);
+ctx.stroke();
+}
+  function clearArea(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
