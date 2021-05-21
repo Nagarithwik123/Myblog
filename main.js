@@ -1,29 +1,36 @@
-var item=["paneer tandoori pizza","margherita pizza","veg supreme pizza","spicy veg pizza","corn and onion pizza"];
-function getmenu(){
-    var htmldata;
-    htmldata="<ol class='menulist'>"
-    item.sort();
-for(var i=0;i<item.length;i++){
-    htmldata=htmldata+'<li>'+ item[i]+ '</li>'
+var canvas= new fabric.Canvas('myCanvas');
+
+player_x=10;
+player_y=10;
+
+block_image_width=30;
+block_image_height=30;
+
+var player_object="";
+var player_block_image="";
+
+function player_update(){
+    fabric.Image.fromURL("player.JPG",function(Img){
+        player_object=Img;
+
+        player_object.scaleToWidth(150);
+        player_object.scaleToHeight(150);
+        player_object.set({
+            top:player_y,
+            left:player_x
+        });
+        canvas.add(player_object);
+    });
 }
-htmldata=htmldata+"</ol>"
-document.getElementById("menu_list").innerHTML=htmldata;
+function new_image(get_image){
+    fabric.Image.fromURL(get_image,function(Img){
+        player_block_image=Img;
+        player_block_image.scaleToWidth(150);
+        player_block_image.scaleToHeight(150);
+        player_block_image.set({
+            top:player_y,
+            left:player_x
+        });
+        canvas.add(player_block_image);
+    });
 }
-function add_top(){
-    var htmldata;
-    var item2= document.getElementById("add_item").value;
-    item.push(item2);
-    item.sort();
-    htmldata="<section class='cards'>"
-    for(var i=0;i<item.length;i++){
-        htmldata=htmldata+'<div class="card">' + '<img src="pizza.png"/>' + item[i] + '</div>';
-    }
-    htmldata=htmldata+"Add";
-    document.getElementById("add_toppings").innerHTML=htmldata;
-}
-function add_item(){
-    var item2=document.getElementById("add_top").value;
-    item.push(item2);
-    add_top();
-}
-    
