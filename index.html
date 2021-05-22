@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>My Project 86</title>
-
-<link rel="stylesheet" href="style.css">
-
-<script src="fabric.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-
-<body class="body_background">
-  
-	<center>
-
-	<h2 class="btn-primary">SUPER HERO</h2>
-
-	<div id="head_info" class="btn-danger">
-		<h3>Current Width  = <span id="current_width">30</span></h3>
-		<h3>Current Height  = <span id="current_height">30</span></h3>
-	</div>
-    <canvas id="myCanvas" width="1000" height="600"></canvas>
-	</center>
-	<script src="main.js"></script>
-</body>
+    <head><title>Guest List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    </head>
+    <body>
+        <center>
+            <h1><b>Guest List</b></h1>
+            <br><br>
+            <span>
+            <input type="text" placeholder="Enter your name" id="name_of_the_person"> 
+            <button onclick="submit_list();" id="submit_guest_list">Submit</button>
+            </span>
+            <br>
+            <hr>
+            <br>
+            <hr>
+            <br>
+            <h1>Guest List</h1>
+            <br>
+            <button onclick="show_list();" id="show_guest_list">Show</button>
+            <br>
+            <button onclick="sort_list();" id="sort_guest_list">Sort</button>
+            <hr>
+            <br>
+            <hr>
+            <br>
+            <input type="text" placeholder="Search name" id="name_of_the_search_person"> 
+            <button onclick="search_list();" id="search_guest_list">Search</button>
+        </center>
+    </body>
 </html>

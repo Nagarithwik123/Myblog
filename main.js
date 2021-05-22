@@ -1,36 +1,33 @@
-var canvas= new fabric.Canvas('myCanvas');
-
-player_x=10;
-player_y=10;
-
-block_image_width=30;
-block_image_height=30;
-
-var player_object="";
-var player_block_image="";
-
-function player_update(){
-    fabric.Image.fromURL("player.JPG",function(Img){
-        player_object=Img;
-
-        player_object.scaleToWidth(150);
-        player_object.scaleToHeight(150);
-        player_object.set({
-            top:player_y,
-            left:player_x
-        });
-        canvas.add(player_object);
-    });
+var names_of_people=[];
+function submit_list(){
+    var GuestName = document.getElementById("name_of_the_person").value;
+    names_of_people.push(GuestName);
+    console.log(GuestName);
+    console.log(names_of_people);
+    var length_of_the_name=names_of_people.length;
+    console.log(length_of_the_name);
+    document.getElementById("show_guest_list").innerHTML=names_of_people;
 }
-function new_image(get_image){
-    fabric.Image.fromURL(get_image,function(Img){
-        player_block_image=Img;
-        player_block_image.scaleToWidth(150);
-        player_block_image.scaleToHeight(150);
-        player_block_image.set({
-            top:player_y,
-            left:player_x
-        });
-        canvas.add(player_block_image);
-    });
+function sorting(){
+    names_of_people.sort();
+    var i=names_of_people.join();
+    console.log(names_of_people);
+    document.getElementById("names_of_people").innerHTML=i;
+}
+function show_list(){
+    var i=names_of_people.join();
+    console.log(names_of_people);
+    document.getElementById("show_guest_list").innerHTML=i;
+}
+function search_list(){
+    var s=document.getElementById("s1").value;
+    var found=0;
+    var j;
+    for(j=0; j<names_of_people.length;j++){
+           if(s==names_of_people[j]){
+               found=found+1;
+           }
+    }
+    document.getElementById("p2").innerHTML="name_found"+found+"time/s";
+    console.log("found_name"+found+"time/s");
 }
