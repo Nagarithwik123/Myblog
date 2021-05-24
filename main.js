@@ -1,12 +1,12 @@
 var names_of_people=[];
 function submit_list(){
-    var GuestName = document.getElementById("name_of_the_person").value;
+    var GuestName = document.getElementById("name1").value;
     names_of_people.push(GuestName);
     console.log(GuestName);
     console.log(names_of_people);
     var length_of_the_name=names_of_people.length;
     console.log(length_of_the_name);
-    document.getElementById("show_guest_list").innerHTML=names_of_people;
+    document.getElementById("show").innerHTML=names_of_people;
 }
 function sorting(){
     names_of_people.sort();
@@ -14,12 +14,12 @@ function sorting(){
     console.log(names_of_people);
     document.getElementById("names_of_people").innerHTML=i;
 }
-function show_list(){
+function show(){
     var i=names_of_people.join();
     console.log(names_of_people);
-    document.getElementById("show_guest_list").innerHTML=i;
+    document.getElementById("show").innerHTML=i;
 }
-function search_list(){
+function searching(){
     var s=document.getElementById("s1").value;
     var found=0;
     var j;

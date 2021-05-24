@@ -6,28 +6,26 @@
     </head>
     <body>
         <center>
-            <h1><b>Guest List</b></h1>
-            <br><br>
-            <span>
-            <input type="text" placeholder="Enter your name" id="name_of_the_person"> 
-            <button onclick="submit_list();" id="submit_guest_list">Submit</button>
-            </span>
-            <br>
+            <h3 style="margin-top: 20px; margin-bottom: 20px;">Guest List</h3>
+            <div id="rows">
+                <input type="text" placeholder="Enter name" id="name1">
+                <button onclick="submit()" id="submit_button">Submit</button><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <hr>
+                <div id="display_name">
+                </div>
+                <hr>
+                <div id="Show1"><h3 id="hd1">Guest List</h3>
+                <button onclick="show()" id="show">Show</button>
+                <p id="p1"></p>
+                </div>
+                <hr>
+                <button onclick="sorting()" id="sort_button">Sorted List</button>
+                <div id="sorted"></div>
+            </div>
             <hr>
-            <br>
-            <hr>
-            <br>
-            <h1>Guest List</h1>
-            <br>
-            <button onclick="show_list();" id="show_guest_list">Show</button>
-            <br>
-            <button onclick="sort_list();" id="sort_guest_list">Sort</button>
-            <hr>
-            <br>
-            <hr>
-            <br>
-            <input type="text" placeholder="Search name" id="name_of_the_search_person"> 
-            <button onclick="search_list();" id="search_guest_list">Search</button>
+            <input type="text" placeholder="Search name" id="s1">&nbsp;
+            <button onclick="searching()" id="srch">Search</button>
+            <p id="p2"></p>
         </center>
     </body>
 </html>
