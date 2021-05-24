@@ -1,31 +1,28 @@
-<!DOCTYPE html>
 <html>
-    <head><title>Guest List</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
-    </head>
-    <body>
-        <center>
-            <h3 style="margin-top: 20px; margin-bottom: 20px;">Guest List</h3>
-            <div id="rows">
-                <input type="text" placeholder="Enter name" id="name1">
-                <button onclick="submit()" id="submit_button">Submit</button><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                <hr>
-                <div id="display_name">
-                </div>
-                <hr>
-                <div id="Show1"><h3 id="hd1">Guest List</h3>
-                <button onclick="show()" id="show">Show</button>
-                <p id="p1"></p>
-                </div>
-                <hr>
-                <button onclick="sorting()" id="sort_button">Sorted List</button>
-                <div id="sorted"></div>
-            </div>
-            <hr>
-            <input type="text" placeholder="Search name" id="s1">&nbsp;
-            <button onclick="searching()" id="srch">Search</button>
-            <p id="p2"></p>
-        </center>
-    </body>
+<head> <title>Project 83</title> 
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body class="body_backgorund">
+
+<div align="center">
+<h1>Paint</h1>
+
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+        <br><br >
+
+   <span>color</span>
+   <input type="text" id="color">
+   <span>width of the line</span>
+   <input type="text" id="width_of_the_line">
+   <br>
+   <button onclick="clearArea();">Clear Area</button>
+    </div>
+<script src="main.js"></script>
+</body>
 </html>

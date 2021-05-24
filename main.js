@@ -1,33 +1,60 @@
-var names_of_people=[];
-function submit_list(){
-    var GuestName = document.getElementById("name1").value;
-    names_of_people.push(GuestName);
-    console.log(GuestName);
-    console.log(names_of_people);
-    var length_of_the_name=names_of_people.length;
-    console.log(length_of_the_name);
-    document.getElementById("show").innerHTML=names_of_people;
-}
-function sorting(){
-    names_of_people.sort();
-    var i=names_of_people.join();
-    console.log(names_of_people);
-    document.getElementById("names_of_people").innerHTML=i;
-}
-function show(){
-    var i=names_of_people.join();
-    console.log(names_of_people);
-    document.getElementById("show").innerHTML=i;
-}
-function searching(){
-    var s=document.getElementById("s1").value;
-    var found=0;
-    var j;
-    for(j=0; j<names_of_people.length;j++){
-           if(s==names_of_people[j]){
-               found=found+1;
-           }
+var last_position_of_x, last_position_of_y;
+
+color = "black";
+width_of_line = 2;
+
+    canvas = document.getElementById('myCanvas');
+    ctx = canvas.getContext("2d");
+
+    var width=screen.width;
+    var height=screen.height;
+    var new_width=screen.width - 70;
+    var new_height=screen.height - 300;
+
+    if(width<992){
+        document.getElementById("myCanvas").width=new_width;
+        document.getElementById("myCanvas").height=new_height;
+        document.body.style.overflow="hidden";
     }
-    document.getElementById("p2").innerHTML="name_found"+found+"time/s";
-    console.log("found_name"+found+"time/s");
-}
+    canvas.addEventListener("touchstart", my_touchstart);
+    
+    function my_touchstart(e)
+    {
+        console.log("my_touchstart");
+
+        
+        color = document.getElementById("color").value;
+        width_of_line = document.getElementById("width_of_line").value;
+        
+
+        last_position_of_x=e.touches[0].clientX - canvas.offsetLeft;
+        last_position_of_y=e.touches[0].clientY - canvas.offsetTop;
+    }
+
+    canvas.addEventListener("touchmove", my_touchmove);
+    function my_touchmove(e)
+    {
+        console.log("my_touchmove");
+        current_position_of_touch_x=e.touches[0].clientX - canvas.offsetLeft;
+        current_position_of_touch_y=e.touches[0].clientY - canvas.offsetTop;
+        
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width_of_line;
+
+        console.log("Last position of x and y coordinates = ");
+        console.log("x = " + last_position_of_x + "y = " + last_position_of_y);
+        ctx.moveTo(last_position_of_x, last_position_of_y);
+
+        console.log("Current position of x and y coordinates = ");
+        console.log("x  = " + current_position_of_touch_x + "y = " + current_position_of_touch_y);
+        ctx.lineTo(current_position_of_touch_x, current_position_of_touch_y);
+        ctx.stroke();
+        
+
+        last_position_of_x = current_position_of_touch_x; 
+        last_position_of_y = current_position_of_touch_y;
+    }
+ function clearArea(){
+     ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+ }
