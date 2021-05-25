@@ -1,28 +1,40 @@
+<!DOCTYPE html>
 <html>
-<head> <title>Project 83</title> 
-<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+<style>
+body{
+	background-image: url("racing.gif");
+    background-position: center;
+    background-size: cover;
+}
+#myCanvas
+{
+	border-width:10px;
+	background-color: white; 
+	border-style:ridge;
+}
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+h1,h4
+{
+	color: white !important;
+}
+</style>		
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+	<title>Car Racing</title>
 </head>
-<body class="body_backgorund">
-
-<div align="center">
-<h1>Paint</h1>
-
-    <canvas id="myCanvas" width="800" height="600"></canvas>
-        <br><br >
-
-   <span>color</span>
-   <input type="text" id="color">
-   <span>width of the line</span>
-   <input type="text" id="width_of_the_line">
-   <br>
-   <button onclick="clearArea();">Clear Area</button>
-    </div>
-<script src="main.js"></script>
-</body>
+<body onload="add()">
+<center>
+<h1>Car racing game</h1>
+<h1>Game Status : <span id="game_status"></span></h1>
+<canvas id="myCanvas" width="800" height="600">
+</canvas>
+<h4>
+	<b class="text-danger">NOTE : </b> IF ROVER IS NOT VISIABLE PRESS ANY ARROW KEY
+</h4>
+</center>
+<script src="main.js">
+</script>
+<script async src="https://drv.tw/inc/wd.js"></script></body>
 </html>
