@@ -1,44 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Guest List</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="main.js"></script>
+    <head>
+        <title>Canvas</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript"></script>
+    </head>
+    <body>
+        <div align="center">
 
-</head>
-<body>
-<center>
-<h3 style="margin-top: 20px; margin-bottom: 20px; ">
-	Guest List
-</h3>
-
-<div id="rows">
-
-<input type="text" placeholder="Enter name" id="name1">
-<button onclick="submit()" id="submit_button">
-	Submit
-</button><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-	
-<hr>
-
-<div id="display_name">
-</div>
-<hr>
-	<div id="Show1"><h3 id="hd1">Guest List</h3>
-		<button onclick="show()" id="show">Show</button>
-		<p id="p1"></p></div>
-	
-<hr>
-<button onclick="sorting()" id="sort_button">
-	Sorted List
-</button>
-	<div id="sorted"></div>
+          <h1>Paint</h1>
+          <canvas id="myCanvas" width="800" height="600"></canvas>
+        <br><br >
+       
+        <span>Color</span>
+        <input id="color" type="text" placeholder="Type Color Here">
+        <span>Width</span>
+        <input id="width_of_the_line" type="text" placeholder="Type Width Here">
+        <span>Radius</span>
+       <input id="radius" type="text" placeholder="Type Radius Here"> 
+       <button onclick="clearArea();">Clear Area</button>
     </div>
-	<hr>
-	<input type="text" placeholder="Search name" id="s1">&nbsp;
-	<button onclick="searching()" id="srch">Search</button>
-	<p id="p2"></p>
-</center>
-		
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

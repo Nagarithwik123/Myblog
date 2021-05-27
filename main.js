@@ -1,46 +1,42 @@
-var names_of_people = [];
-    
-function submit()
-{
-    var GuestName = document.getElementById("name1").value;
-	names_of_people.push(GuestName);
+var mouseEvent="empty";
+var last_position_of_x,last_position_of_y;
+canvas=document.getElementById('myCanvas');
+ctx=canvas.getContext("2d");
+color="black";
+width_of_the_line=1;
+radius=10;
+canvas.addEventListener("mousedown",my_mousedown);
+function my_mousedown(e){
+    color=document.getElementById("color").value;
+    width_of_the_line=document.getElementById("width_of_the_line").value;
+    radius=document.getElementById("radius").value;
+    mouseEvent="mouseDown";
+}
+canvas.addEventListener("mousemove",my_mousemove);
+function my_mousemove(e){
+    current_position_of_mouse_x=e.clientX - canvas.offsetLeft;
+    current_position_of_mouse_y=e.clientY - canvas.offsetTop;
+    if(mouseEvent=="mouseDown"){
+        ctx.beginPath();
+        ctx.strokeStyle=color;
+        ctx.lineWidth=width_of_the_line;
+        ctx.arc(current_position_of_mouse_x,current_position_of_mouse_y, radius, 0, 2*Math.PI);
+        ctx.stroke();
+        console.log("current_position_of_x_and_y=");
+        console.log("X="+current_position_of_mouse_x+"Y="+current_position_of_mouse_y);
+        ctx.stroke();
+    }
+}
+canvas.addEventListener("mouseup",my_mouseup);
+function my_mouseup(e){
+    mouseEvent="mouseUP";
 
-	console.log(GuestName);
-        
-    console.log(names_of_people);
-    var lenght_of_name = names_of_people.length;
-    console.log(lenght_of_name);
-	document.getElementById("display_name").innerHTML=names_of_people.toString();
-	
-   }
+}
+canvas.addEventListener("mouseleave",my_mouseleave);
+function my_mouseleave(e){
+    mouseEvent="mouseleave";
+}
 
-function sorting()
-{
-	names_of_people.sort();
-	var i= names_of_people.join("<br>");
-    console.log(names_of_people);		
-	document.getElementById("sorted").innerHTML=i.toString();
-	}
-
-function show()
-{
-	var i= names_of_people.join("<br>");
-	console.log(names_of_people);
-	document.getElementById("p1").innerHTML=i.toString();
-	document.getElementById("sort_button").style.display="block";
-	}
-
-function searching()
-{
-	var s= document.getElementById("s1").value;
-	var found=0;
-	var j;
-	for(j=0; j<names_of_people.length; j++)
-		{
-			if(s==names_of_people[j]){
-				found=found+1;
-			}	
-		}
-	document.getElementById("p2").innerHTML="name found "+found+" time/s";
-	console.log("found name "+found+" time/s");
+function clearArea(){
+    ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
 }
