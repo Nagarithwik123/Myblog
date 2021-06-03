@@ -20,7 +20,7 @@ function send()
     actual_answer = parseInt(number1) * parseInt(number2);
     console.log(actual_answer);
 
-    question_number = "<h4>" + number1 + " × " + number2 + "</h4>";
+    question_number = "<h4>" + number1 +"x"+ number2 + "</h4>";
     input_box = "<br>Answer: <input type = 'text' id = 'input_checkbox' placeholder = 'Type the answer here'>";
     check_button = "<br><br><button class = 'btn btn-success' onclick = 'check()'>Check</button>";
     
@@ -38,6 +38,8 @@ answer_turn = "player2";
 function check()
 {
     get_answer = document.getElementById("input_checkbox").value;
+    
+ 
 
     if (get_answer == actual_answer) {
         if (answer_turn == "player1") {
@@ -69,4 +71,5 @@ function check()
     }
 
     document.getElementById("output").innerHTML = "";
+
 }
