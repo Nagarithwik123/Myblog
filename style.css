@@ -16,6 +16,13 @@ html,body
     background-position: center;
     background-size: cover;
 }
+.body_back
+{
+	background-image: url("bg-2.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 .header
 {
 	color: rgb(255, 0, 98);font-family: 'Yeon Sung';font-size: 45px;letter-spacing: 10px;margin-top: 80px;
