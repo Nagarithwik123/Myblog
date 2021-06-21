@@ -1,46 +1,56 @@
+<!DOCTYPE html>
 <html>
     <head>
-       <title>My Selfie App</title>
- <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <style>
+            body{
+                background-image: url("bg.gif");
+                background-position: center;
+                background-size: cover;
+            }
+            #myCanvas
+            {
+                border-width:10px;
+                background-color: white; 
+                border-style:ridge;
+            }
+            
+            h1,h4
+            {
+                color: white !important;
+            }
 
-<link href="style.css" rel="stylesheet">
+            </style>		
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+            <title>Rabbit and tortoise race</title>
+            </head>
+            <body onload="add()">
+                <center>
+                <h1 class="btn-success">Rabbit and Tortoise racing game</h1>
+                <h4 class="btn-primary">
+                    <b class="text-danger">NOTE : </b>
+                    <span>1.</span>Press arrow keys to move the Rabbit.<br>
+                    <span>2.</span>Up arrow moves to upward direction.<br>
+                    <span>3.</span>Down arrow moves to downward direction.<br>
+                    <span>4.</span>Left arrow moves to leftside.<br>
+                    <span>5.</span>Right arrow moves to rightside.
+                </h4>
+                    <h4 class="btn-danger">
+                    <span>1.</span>Press W A S D keys to move the Tortoise.<br>
+                    <span>2.</span>W arrow moves to upward direction.<br> 
+                    <span>3.</span>S arrow moves to downward direction.<br>
+                    <span>4.</span>A arrow moves to leftside.<br> 
+                    <span>5.</span>D arrow moves to rightside.
+                </h4>
+                <br>
+                <h1 class="btn-warning">Game Status : <span id="game_status"></span></h1>
+                <canvas id="myCanvas" width="800" height="600">
+                </canvas>
+                
+                </center>
+                <script src="main.js">
+                </script>
+                <script async src="https://drv.tw/inc/wd.js"></script></body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
-</head>
- 
-<body>
-    <div class="container">
-    <center>
-       <a href="" id="link" download="myselfie.png"></a>
-        <h1>Voice Selfie App 
-        <img id="logo_img" src="selfie.jpeg">
-        </h1>
-        <hr>
-        <h4 style="color:red;">Please press allow as soon as popup comes. After you give a voice command</h4>
-        
-        <div class="form-group">
-            <h3>Say "take my selfie"</h3>
-            <label>Your voice output : </label>
-            <textarea class="form-control" id="text_box" readonly="true"></textarea>
-        </div>
-
-         <button class="btn btn-success" onclick="start()">Start</button>
-
-        <p>Press the Start button</p>
-
-        <label>Your webcam : </label>
-        <div id="camera"></div>
-        <br>
-
-        <label>Your selife Will Display Here: </label>
-        <div id="result"></div>
-
-    </center>
-    </div>
-
-    <script src="main.js"></script>
-</body>
 </html>
