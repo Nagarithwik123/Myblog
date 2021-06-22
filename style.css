@@ -1,19 +1,27 @@
-#start-btn
+html,body
 {
-    width: 40%;
+  height: 100%;
+  margin: 0;
+}
+
+.body_background 
+{
+    background-image: url("bg.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.heading{
+    width: 80%;
+    font-size: 22px;
+}
+
+#camera{
+    border: 2px dashed black;
+    width: 350px;
+    height: 300px;
+}
+
+.name_of_the_family_members,#result_member_name,#result_member_accuracy{
+    color: red;
 } 
-#camera
-{
-    width:360px;
-    height: 250px;
-    border:1px solid grey;
-}
-#logo_img
-{
-    width: 150px;
-    border-radius: 100px;
-}
-#textbox
-{
-    width: 300px;
-}

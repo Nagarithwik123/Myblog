@@ -1,56 +1,55 @@
-<!DOCTYPE html>
+ 
 <html>
-    <head>
-        <style>
-            body{
-                background-image: url("bg.gif");
-                background-position: center;
-                background-size: cover;
-            }
-            #myCanvas
-            {
-                border-width:10px;
-                background-color: white; 
-                border-style:ridge;
-            }
-            
-            h1,h4
-            {
-                color: white !important;
-            }
+  <head>
+    <title>Image recognition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-            </style>		
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-            <title>Rabbit and tortoise race</title>
-            </head>
-            <body onload="add()">
-                <center>
-                <h1 class="btn-success">Rabbit and Tortoise racing game</h1>
-                <h4 class="btn-primary">
-                    <b class="text-danger">NOTE : </b>
-                    <span>1.</span>Press arrow keys to move the Rabbit.<br>
-                    <span>2.</span>Up arrow moves to upward direction.<br>
-                    <span>3.</span>Down arrow moves to downward direction.<br>
-                    <span>4.</span>Left arrow moves to leftside.<br>
-                    <span>5.</span>Right arrow moves to rightside.
-                </h4>
-                    <h4 class="btn-danger">
-                    <span>1.</span>Press W A S D keys to move the Tortoise.<br>
-                    <span>2.</span>W arrow moves to upward direction.<br> 
-                    <span>3.</span>S arrow moves to downward direction.<br>
-                    <span>4.</span>A arrow moves to leftside.<br> 
-                    <span>5.</span>D arrow moves to rightside.
-                </h4>
-                <br>
-                <h1 class="btn-warning">Game Status : <span id="game_status"></span></h1>
-                <canvas id="myCanvas" width="800" height="600">
-                </canvas>
-                
-                </center>
-                <script src="main.js">
-                </script>
-                <script async src="https://drv.tw/inc/wd.js"></script></body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
 
+   <link rel="stylesheet" href="style.css">
+  
+  </head>
+
+  <body class="body_background">
+  <div class="container">
+    
+    <center>
+     <h3 class="btn btn-default heading">IMAGE RECOGNITION</h3>
+      <br><br>
+
+      <p style="font-size: 22px;">Model is trained to identify the following family members: </p>
+      <b class="name_of_the_family_members">
+      Father
+      <hr>
+      Mother
+      <hr>
+      Sister
+      <hr>
+      Brother
+      <hr>
+    </b>
+
+      <label>Webcam View - </label>
+       <div id="camera"></div>
+      <br><br>
+       <div id="result"></div>
+      <br><br>
+      <button onclick="take_snapshot();" class="btn btn-info">Capture Image</button>
+      <br><br>
+      <button onclick="check();" class="btn btn-success">Identify Image</button>
+      <br><br>
+
+      <p style="font-size: 22px;">Family Member :  <span id="result_member_name"></span></p>
+      <p style="font-size: 22px;">Accuracy :  <span id="result_member_accuracy"></span></p>
+    </center>
+
+  </div>
+<script src="main.js"></script>
+
+  </body>
 </html>
+
+ 
