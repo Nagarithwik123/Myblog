@@ -1,7 +1,14 @@
-body
+html,body
 {
-  color: white;
-  background: palegreen;
+  height: 100%;
+  margin: 0;
+}
+
+.body_background 
+{
+    background-image: url("bg.jpg");
+    background-position: center;
+    background-size: cover;
 }
 span
 {
