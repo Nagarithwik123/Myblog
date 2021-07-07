@@ -1,48 +1,10 @@
-html,body
-{
-  height: 100%;
-  margin: 0;
+body{
+    background: rgb(212, 248, 52);
 }
-
-.body_background 
-{
-    background-image: url("bg.jpg");
-    background-position: center;
-    background-size: cover;
+h2{
+  color: red;
 }
-span
-{
-  font-size: 30px;
-}
-#camera , #result
-{
-  border: 2px dashed black;
-  width: 350px;
-  height: 300px; 
-}
-#result_emotion_name,#result_emotion_name_two  
-{
-  color: black;
-}
-.emotion_name
-{
-  font-size: 40px;
-}
-.emoji
-{
-  font-size:48px;
-}
-.heading
-{
-  font-size: 18px;
-  border-radius: 10px;
-  letter-spacing: 10px;
-}
-label
-{
-  font-size: 14px;
-  color: white;
-  padding: 6px;
-  border-radius: 10px;
-  background-color: crimson;
+.bob-3{
+    background: lime;
+    color: black;
 }
