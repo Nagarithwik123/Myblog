@@ -1,46 +1,34 @@
 <html>
-    <head><title>My Project 110</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    
-        <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
-    
-        <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <center>
-            <h1>Case Study</h1>
-            <br>
-            <ol>
-                <div class="text_images_and_result">
-            <li>
-                <h2><b class="text-primary">Test Image -</b></h2><img src="water bottle.jpg" class="img-responsive">
-            </li>
-        <h3>Output on
-            <b class="text-success">Wolfram Project</b> -
-            <span> bottled water</span>
-        </h3>
 
-        <h3>Output on
-            <b class="text-warning">Mobilenet Model</b> -
-            <span> Water bottle </span>
-        </h3>
+<head>
+  <meta charset="UTF-8">
+  <title>Digital photo frame</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-        <div class="bob">
-            <h2>Result - </h2>
-            <hr>
-            <h2>Mobilenet Model is more accurate</h2>
-        </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
 
+<style type="text/css">
+  h3
+  {
+    font-size: 25px !important;
+  }
+  canvas {
+  	border:1px solid black;
+  }
+  </style>
+</head>
 
-        </div>
-            </ol>
-        </center>
-        
-    </body>
+<body>
+  <div class="container">
+    <h3 class="btn btn-primary">Digital Photo Frame</h3>
+    <hr>
+    <button onclick="take_snapshot()" class="btn btn-success">Take Snapshot</button>
+  </div>
+
+<script src="main.js"></script>
+</body>
+
 </html>
