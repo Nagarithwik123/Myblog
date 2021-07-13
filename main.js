@@ -2,7 +2,7 @@ function preload(){
 
 }
 function setup(){
-    canvas = createCanvas(300,300);
+    canvas = createCanvas(250,250);
     canvas.center();
 }
 function draw(){
@@ -10,5 +10,5 @@ function draw(){
 }
 
 function take_snapshot(){
-    save('My_filter_image.png');
+    save('mustache_filter_image.png');
 }
