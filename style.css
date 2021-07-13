@@ -1,10 +1,20 @@
-body{
-    background: rgb(212, 248, 52);
+.body_background{
+    background-image: url("mustache_bg.jpg");
+    background-position: center;
+    background-size: cover;
 }
-h1{
-  color: red;
+h3{
+    font-size: 25px !important;
 }
-.bob{
-    background: lime;
-    color: black;
+.btn-success:hover{
+    background-color: red;
+}
+canvas{
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes example{
+    from{box-shadow: 1px 1px 38px violet;}
+    to{box-shadow: 1px 1px 38px rgb(252, 0, 0);}
 }
