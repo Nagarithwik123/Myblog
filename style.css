@@ -1,5 +1,15 @@
+.background_body{
+    background-image: url("bg.jpg");
+    background-position: center;
+    background-size: cover;
+}
 .body_background{
     background-image: url("mustache_bg.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.bd_background{
+    background-image: url("lipstick_bg.jpg");
     background-position: center;
     background-size: cover;
 }
