@@ -1,5 +1,5 @@
-lipstickX=0;
-lipstickY=0;
+noseX=0;
+noseY=0;
 
 function preload(){
     lipstick = loadImage('https://i.postimg.cc/zfmy6Ps8/lipstick.png');
@@ -22,7 +22,7 @@ function modelLoaded(){
 
 function draw(){
     image(video,0,0,250,250);
-    image(lipstick,lipstickX,lipstickY,30,30);
+    image(lipstick,noseX,noseY,30,30);
 }
 
 function take_snapshot(){
@@ -31,9 +31,7 @@ function take_snapshot(){
 function gotPoses(results){
     if(results.length > 0){
         console.log(results);
-        lipstickX=results[0].pose.lipstick.x;
-        lipstickY=results[0].pose.lipstick.y;
-        console.log("lipstick x ="+lipstickX);
-        console.log("lipstick y ="+lipstickY);
+        noseX=results[0].pose.nose.x-10;
+        noseY=results[0].pose.nose.y+20;
     }
 }
