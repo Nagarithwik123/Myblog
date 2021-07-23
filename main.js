@@ -1,6 +1,8 @@
-function mustache_text(){
-    window.location="mustache.html";
+function setup(){
+    canvas = createCanvas(270,270);
+    canvas.center();
 }
-function lipstick_text(){
-    window.location="lipstick.html";
+
+function draw(){
+
 }
