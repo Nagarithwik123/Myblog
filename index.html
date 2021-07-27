@@ -1,7 +1,6 @@
 <html>
-
 <head>
-  <title>Realtime Family Identification</title>
+  <title>Real Time Image Identification App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -11,41 +10,47 @@
   <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
-
-<body background="bg.jpg">
-   <center>
-     <h3 class="btn btn-info heading">Realtime Family Identification
-     <hr>
-   <center>
-     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 heading_div">
-       Model is trained on -
-       <br>
-       <div class="btn btn-warning heading_div2">
-       Dad | Mom | Sister | Brother
-      </div>
-     </div>
-   </center>
+<body background="background.jpg">
+<center>
+  <h3 class="btn btn-primary heading">Real Time Image Identification App
+    <hr>
+    <center>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 heading_div">
+        We are using Mobilenet as a Model  
+        <br>
+          <div class="heading_div2">
+          Mobilenet model is trained on 
+          <br>
+          more than 1.3 million images.
+          </div>
+        </div>
+      </center>
+    <br>
   </h3>
-  <br>
-
+  
+  <br><br>
+  
   <span class="btn btn-warning result_para_tag">
-    Family Member - 
-    <span id="result_family_member_name"></span>
+    Object - 
+    <span id="result_object_name"></span>
   </span>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <span class="btn btn-warning result_para_tag">
       Accuracy -
-      <span id="result_family_member_accuracy"></span>
+      <span id="result_object_accuracy"></span>
     </span>   
-  </p>
-  
-  </center>
-  <div class="copy_right_footer">
-    Developed by CH.Naga Rithwik
-  </div>
-  <script src="main.js"></script>
+
+
+</center>
+
+<div class="copy_right_footer">
+Developed by CH.Naga Rithwik
+</div>
+
+<script src="main.js"></script>
 </body>
 
 </html>
+
+
