@@ -1,157 +1,33 @@
-<!DOCTYPE html>
 <html>
-    <head>
-	<title>CASE STUDY</title>
+<head>
+  <title>Font Manipulator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-85417367-1"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style type="text/css">
-        .copy_right_footer {
-         position: fixed;
-         color: black;
-         bottom: 0;
-         width: 100%;
-         background-color: chartreuse;
-         line-height: 2;
-         text-align: center;      
-      }
-      ol h5
-      {
-          background: white;
-          padding: 13px;
-          border-radius: 20px;
-      }
-      span
-      {
-          color: red;
-          font-size: 16px;
-      }	
-      li img
-      {
-          border-radius: 20px;
-      }
-      .bob
-      {
-          background: #949494;
-          padding: 30px;
-          border-radius: 20px;
-          margin-top: 50px;
-          box-shadow: 5px 5px 18px grey;
-      }
-      b
-      {
-          color: purple;
-      }
-      .result
-      {
-	box-shadow: 5px 5px 18px grey;
-	letter-spacing: 2px;
-	background: #F2BAC9;
-	border-radius: 20px;
-	margin-top:30px;
-	padding: 20px;
-	border:2px solid grey
-      }
-      
-      </style>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
 
-<div class="container">
-	<h4 class="text-danger" style="text-align: center;font-family: 'Lexend Tera', sans-serif;">
-	<span>CASE STUDY BETWEEN GOOGLE LENS AND MOBILNET </span>
-	<br><br>
-	GOOGLE LENS <img src="gl.jpeg" style="width: 150px;">
-	<p>
-		<b style="color: red;">VS</b>
-	</p>
-	<br>
-	<p class="btn btn-primary" style="font-size: 20px;">Mobilenet </p>
-	</h4>
+<body background="bg.jpg">
+<center>
+  <h3 class="btn btn-info heading">Font Manipulator
+    <br>
+    <span class="note">NOTE - Get your left and right wrist closer 
+      to reduce the font size and to increase the fontsize of 
+      the square keep your left and right wrist far from each other. 
+      </span>
+    <br>
+    <span id="fontsize"></span>
+  </h3>
+</center>
+<div class="copy_right_footer">
+  Developed by CH.Naga Rithwik
+</div>
 
-	<hr>
-	<ol>
-        <div class="bob col-xs-12">
-
-			<li class="col-sm-4 col-xs-12">
-				<b style="color: white;">Test Image - </b><img src="bottle.jpeg" class="img-responsive">
-			</li>
-			<h5 class="col-sm-4 col-xs-12" >Output on <b>GOOGLE LENS</b> -
-				<span>Water bottle</span>  
-			</h5>
-			<h5 class="col-sm-4 col-xs-12">Output on <b>Mobilenet Model </b> -
-				<span>Water bottle</span>  
-			</h5>
-
-			<div class="bob3" class="col-xs-12">
-				<h4>Result - </h4>
-				<hr>
-				<h4>Draw</h4>
-			</div>
-
-		</div>
-		<br>
-
-        <hr>
-	<ol>
-        <div class="bob col-xs-12">
-
-			<li class="col-sm-4 col-xs-12">
-				<b style="color: white;">Test Image - </b><img src="bed.jpeg" class="img-responsive">
-			</li>
-			<h5 class="col-sm-4 col-xs-12" >Output on <b>GOOGLE LENS</b> -
-				<span> Bed, Pillow, Blanket</span>  
-			</h5>
-			<h5 class="col-sm-4 col-xs-12">Output on <b>Mobilenet Model </b> -
-				<span>bathtub, bathing tub, bath, tub</span>  
-			</h5>
-
-			<div class="bob3" class="col-xs-12">
-				<h4>Result - </h4>
-				<hr>
-				<h4>GOOGLE LENS Is More Accurate</h4>
-			</div>
-
-		</div>
-		<br>
-        
-        <hr>
-	<ol>
-        <div class="bob col-xs-12">
-
-			<li class="col-sm-4 col-xs-12">
-				<b style="color: white;">Test Image - </b><img src="hp.jpeg" class="img-responsive">
-			</li>
-			<h5 class="col-sm-4 col-xs-12" >Output on <b>GOOGLE LENS</b> -
-				<span> Headphones</span>  
-			</h5>
-			<h5 class="col-sm-4 col-xs-12">Output on <b>Mobilenet Model </b> -
-				<span>Microphone, Mike</span>  
-			</h5>
-
-			<div class="bob3" class="col-xs-12">
-				<h4>Result - </h4>
-				<hr>
-				<h4>GOOGLE LENS Is More Accurate</h4>
-			</div>
-
-		</div>
-		<br>
-	</ol>
-<br><br>
-<h4 class="col-xs-12 result">
-	I have tested 3 images<br>
-	 <b>GOOGLE LENS</b> have predicted 2 of them more accurately. And <b>MOBILENET</b> was less accurately<br>
-	 So according to my case study <b>GOOGLE LENS</b> is more Accurate</h4>
-
-
-    <div class="copy_right_footer">
-      Developed by - CH.Naga Rithwik
-    </div>
-
+<script src="main.js"></script>
 </body>
 </html>
