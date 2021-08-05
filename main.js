@@ -1,27 +1,20 @@
-function setup() {
-  canvas = createCanvas(280, 280);
-  canvas.center();
-  video = createCapture(VIDEO);
-  video.hide();
-  classifier = ml5.imageClassifier('mobilenet',modelLoaded);
-}
-function draw(){
-  image(video,0,0,280,280);
-  classifier.classify(video,gotResult);
+function setup(){
+    video = createCapture(VIDEO);
+    video.size(520,480)
+
+   canvas = createCanvas(520,480);
+   canvas.position(560,100);
+   poseNet = ml5.poseNet(video,modelLoaded);
+   poseNet.on('pose',gotPoses);
 }
 function modelLoaded(){
-  console.log('model is loaded');
+    console.log('Posenet is Initialised');
 }
-function gotResult(error,results){
-  if(error){
-    console.error(error);
-  }
-  else{
-    console.log(results);
-    document.getElementById("result_object_name").innerHTML= results[0].label;
-    document.getElementById("result_object_accuracy").innerHTML= results[0].confidence.toFixed(3);
-  }
+function gotPoses(results){
+   if(results.length>0){
+       console.log(results);
+   }
 }
-
-
-
+function draw(){
+    background('#a19d9e');
+}
