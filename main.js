@@ -1,38 +1,48 @@
-Webcam.set({
-    width:350,
-    height:300,
-    image_format:'png',
-    png_quality:90
-});
+noseX=0;
+noseY=0;
+difference = 0;
+rightWristX = 0;
+leftWristX = 0;
 
-camera =document.getElementById("camera");
-Webcam.attach('#camera');
+  function setup() {
+  video = createCapture(VIDEO);
+  video.size(520, 480);
 
-function take_snapshot(){
-    Webcam.snap(function(data_uri){
-        document.getElementById("result").innerHTML='<img id="captured_image" src="'+data_uri+'"/>';
-    });
+  canvas = createCanvas(520, 480);
+  canvas.position(560,100);
+
+  poseNet = ml5.poseNet(video, modelLoaded);
+  poseNet.on('pose', gotPoses);
 }
 
-console.log('ml5 version:',ml5.version);
-classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/JS4Hlu16M/model.json',modelLoaded);
-
-function modelLoaded(){
-    console.log('model loaded');
+function modelLoaded() {
+  console.log('PoseNet Is Initialized!');
 }
 
-function check(){
-    img=document.getElementById('captured_image');
-    classifier.classify(img,gotResult);
+
+function gotPoses(results)
+{
+  if(results.length > 0)
+  {
+    console.log(results);
+
+    noseX = results[0].pose.nose.x;
+    noseY = results[0].pose.nose.y;
+    console.log("noseX ="+ noseX+"noseY ="+noseY);
+
+    leftWristX = results[0].pose.leftWrist.x;
+    rightWristX = results[0].pose.rightWrist.x;
+    difference = floor(leftWristX - rightWristX);
+
+    console.log("leftWristX  = " + leftWristX  + " rightWristX = "+ rightWristX + " difference = " + difference);
+  }
 }
 
-function gotResult(error,results){
-    if(error){
-        console.error(error);
-    }
-    else{
-        console.log(results);
-        document.getElementById("result_object_name").innerHTML=results[0].label;
-        document.getElementById("result_object_accuracy").innerHTML=results[0].confidence.toFixed(3);
-    }
+function draw() {
+background('#4e42f5');
+
+  document.getElementById("font_size").innerHTML = "Font size of the text will be = " + difference +"px";
+textSize(difference);
+fill('#FFE787');
+text('2021', 50, 400);
 }

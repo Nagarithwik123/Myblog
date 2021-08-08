@@ -1,56 +1,33 @@
- 
 <html>
-  <head>
-    <title>Image recognition</title>
+
+<head>
+  <title>Font Manipulator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-   <link rel="stylesheet" href="style.css">
-  
-  </head>
+<body background="bg.jpg">
+<center>
+  <h3 class="btn btn-warning heading">FONT MANIPULATOR
+    <br>
+    <span class="note">NOTE - Get your left and right wrist closer to reduce the font size and to increase the fontsize keep your left and right wrist far from each other.
+    </span>
+    <br>
+    <span id="font_size"></span>
+  </h3>
+</center>
 
-  <body>
-  <div class="container">
-    
-    <center>
-     <h3 class="btn btn-default heading">IMAGE RECOGNITION</h3>
-      <br><br>
+<div class="copy_right_footer">
+  Developed by - CH.Naga Rithwik
+</div>
 
-      <p style="font-size: 22px;">Model is trained to identify the following objects: </p>
-      <b class="name_of_the_objects">
-      Watch
-      <hr>
-      Spoon
-      <hr>
-      Phone
-      <hr>
-      Water Bottle
-      <hr>
-    </b>
-
-      <label>Webcam View - </label>
-       <div id="camera"></div>
-      <br><br>
-       <div id="result"></div>
-      <br><br>
-      <button onclick="take_snapshot();" class="btn btn-info">Capture Image</button>
-      <br><br>
-      <button onclick="check();" class="btn btn-success">Identify Image</button>
-      <br><br>
-
-      <p style="font-size: 22px;">Object :  <span id="result_object_name"></span></p>
-      <p style="font-size: 22px;">Accuracy :  <span id="result_object_accuracy"></span></p>
-    </center>
-
-  </div>
 <script src="main.js"></script>
+</body>
 
-  </body>
 </html>
-
- 
