@@ -3,14 +3,16 @@ body{
 }
 .copy_right_footer{
     position: fixed;
+    float: none;
     width: 100%;
     text-align: center;
     line-height: 2;
-    float: none;
-    background: chartreuse;
-    color: black;
-    box-shadow: 5px 5px 5px lightslategray;
     bottom: 0;
+    background: chartreuse;
+    color: white;
+    box-shadow: 5px 5px 5px rgb(255, 0, 140);
+    font-family: 'Style Script', cursive;
+    font-size: 25px;
 }
 .heading{
     font-size: 23px;
@@ -25,8 +27,38 @@ body{
     color: indigo;
     white-space: pre-line;
 }
+.speed{
+    float: left;
+}
+.volume{
+    float: right;
+}
+#speed_img{
+    width: 150px;
+    border-radius: 100px;
+    margin-left: 50px;
+}
+#speed_button{
+    border-radius: 15px;
+}
+#volume_img{
+    width: 150px;
+    border-radius: 100px;
+    margin-right: 50px;
+}
+#volume_button{
+    border-radius: 15px;
+}
+.play_button{
+    font-size: 23px;
+    width: 70px;
+    border-radius: 15px;
+}
 canvas{
-    border-radius: 20;
+    float: none;
+    border-radius: 20px;
     border: solid;
     border-color: white;
+    box-shadow: 5px 5px 5px grey;
+    margin-top: 150px;
 }

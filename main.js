@@ -1,48 +1,58 @@
-noseX=0;
-noseY=0;
-difference = 0;
-rightWristX = 0;
-leftWristX = 0;
+song = "";
+leftWristX=0;
+leftWristY=0;
+rightWristX=0;
+rightWristY=0;
+scoreLeftWrist=0;
 
-  function setup() {
-  video = createCapture(VIDEO);
-  video.size(520, 480);
 
-  canvas = createCanvas(520, 480);
-  canvas.position(560,100);
-
-  poseNet = ml5.poseNet(video, modelLoaded);
-  poseNet.on('pose', gotPoses);
+function preLoad(){
+    song = loadSound("music.mp3");
 }
+function setup(){
+    canvas = createCanvas(400,300);
+    canvas.center();
 
-function modelLoaded() {
-  console.log('PoseNet Is Initialized!');
+    video = createCapture(VIDEO);
+    video.hide();
+
+    poseNet = ml5.poseNet(video,modelLoaded);
+    poseNet.on('pose',gotPoses);
 }
+function modelLoaded(){
+    console.log('PoseNet is Initialized');
+}
+function draw(){
+    image(video,0,0,400,300);
 
-
-function gotPoses(results)
+    fill("#ff0400");
+    stroke("#ff0400");
+    
+    if(scoreLeftWrist>0.2){
+        circle(leftWristX,leftWristY,20);
+        InNumberLeftWristY = Number(leftWristY);
+        removeDecimals = floor(InNumberLeftWristY);
+        volume=removeDecimals/300;
+        document.getElementById("volume_button").innerHTML = "volume=" + volume;
+        song.setVolume(volume);
+    }
+}
+function playsong()
 {
-  if(results.length > 0)
-  {
-    console.log(results);
-
-    noseX = results[0].pose.nose.x;
-    noseY = results[0].pose.nose.y;
-    console.log("noseX ="+ noseX+"noseY ="+noseY);
-
-    leftWristX = results[0].pose.leftWrist.x;
-    rightWristX = results[0].pose.rightWrist.x;
-    difference = floor(leftWristX - rightWristX);
-
-    console.log("leftWristX  = " + leftWristX  + " rightWristX = "+ rightWristX + " difference = " + difference);
-  }
+    song.play();
+    song.setVolume(1);
+    song.rate(1);
 }
+function gotPoses(results){
+    if(results.length>0){
+        console.log(results);
 
-function draw() {
-background('#4e42f5');
+        leftWristX = results[0].pose.leftWrist.x;
+        leftWristY = results[0].pose.leftWrist.y;
+        console.log("leftWristX="+ leftWristX + "leftWristY="+ leftWristY);
 
-  document.getElementById("font_size").innerHTML = "Font size of the text will be = " + difference +"px";
-textSize(difference);
-fill('#FFE787');
-text('2021', 50, 400);
+        rightWristX = results[0].pose.rightWrist.x;
+        rightWristY = results[0].pose.rightWrist.y;       
+        console.log("rightWristX="+ rightWristX + "rightWristY="+ rightWristY);
+    }
 }
